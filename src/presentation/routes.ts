@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import { GamesRouter } from './games/routes';
+import { CharactersRouter } from './characters/routes';
 
 export class AppRouter {
 
@@ -12,7 +14,8 @@ export class AppRouter {
             });
         });
 
-        // appRouter.use('/api/games', ); // ? Specific routes
+        appRouter.use( '/api/games', GamesRouter.routes ); // ? Specific routes
+        appRouter.use( '/api/characters', CharactersRouter.routes ); // ? Specific routes
 
         return appRouter;
     }

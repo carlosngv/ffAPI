@@ -1,9 +1,9 @@
 
 
-export class Character {
+export class CharacterEntity {
 
     constructor(
-        public id: number,
+        public id: string,
         public name: number,
         public age: number,
         public origin: string,
@@ -20,7 +20,7 @@ export class Character {
         if( !description ) throw `${ description } is required`;
         if( !name ) throw `${ name } is required`;
 
-        return new Character( id, name, age, origin, description );
+        return new CharacterEntity( id, name, age, origin, description );
 
     }
 
